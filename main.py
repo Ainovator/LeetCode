@@ -22,7 +22,6 @@ class Solution(object):
             try:
                 len_adder = int(input("Input length of nums list: "))
                 for i in range(len_adder):
-                    end_this = False
                     print_assist = f"Input {i} num: "
                     num_adder = int(input(print_assist))
                     self.nums.append(num_adder)
@@ -35,24 +34,25 @@ class Solution(object):
         print(f"You num list is: {self.nums}")
 
 
+def first_step():
+        if input_step == "y":
+            list_set = generate_random_list()
+        elif input_step == "n":
+            new_object.new_nums()
+
+
 
 end_program = False
 while not end_program:
 
     print("Input Target: ")
     target_set = select_num()
-
+    new_object = Solution([], target_set)
     
     while not step_check(input_step):
         input_step = input("Do you want random list? y/n | ")
-       
-        
-    
-    list_set = generate_random_list()
 
-    new_object = Solution(list_set, target_set)
+    first_step()
     new_object.display_all_info()
-
-    object_list.append(new_object)
 
     end_program = True

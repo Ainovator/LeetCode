@@ -40,10 +40,10 @@ def step_check(input):
 
     if input_lower == "y" or input_lower == "n":
         print("okey, lets do it")
-        return True, input_lower
+        return True
     else:
         print('Input only "y" or "n"')
-        return False, input_lower
+        return False
 
 
                 
