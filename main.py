@@ -25,9 +25,20 @@ class Solution(object):
         print(f"You target is: {self.target}.")
         print(f"You num list is: {self.nums}")
 
-def find_sum(list_nums):
-    for num in range(len(list_nums)):
-        print(num)
+def find_sum(list_nums, target):
+    for num in list_nums[:-1]:
+        #Вычисление второго слогаемого
+        partner_num = target - num
+        #Количество этого числа в массиве
+        count_second_num = new_object.nums[new_object.nums.index(num)+1:].count(partner_num)
+        #Если число есть добавляю в массив количество вариаций
+        if count_second_num > 0:
+            print("Sum from: ", num, partner_num)
+        else:
+            pass
+           
+        
+        
 
 
 print("<Input target in next line>")
@@ -38,9 +49,9 @@ while not step_check(input_step):
     input_step = input("<Do you want random list? (y/n)>")
 
 if input_step == "y":
-    new_object.nums.extend(generate_random_list())
+    new_object.nums.extend(set(generate_random_list()))
 else:
     new_object.new_nums()
 
-find_sum(new_object.nums)
+find_sum(new_object.nums, target_set)
 new_object.display_all_info()

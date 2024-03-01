@@ -31,6 +31,11 @@ def generate_random_list():
         sep_list.append(random.randint(1, 9))
     print("Your list is generated \n")
     return sep_list
+
+
+
+
+
 #Function to check input y/n
 def step_check(input):
     try:
