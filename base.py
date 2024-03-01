@@ -1,5 +1,6 @@
 import random
 import time
+import sys
 
 #decor function to show time manage
 def decor_timer(funct):
