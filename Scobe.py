@@ -1,10 +1,18 @@
-class Solution(object):
-    def isValid(self,x):
-        
-        if x.count("()") 
-            return True 
-        else:
-            return False
+def isValid(s):
+    stack = []
+    mapping = {')': '(', '}': '{', ']': '['}
 
-object = Solution()
-print(object.isValid("\'\'"))
+    for char in s:
+        if char in mapping:
+            top_element = stack.pop() if stack else '#'
+            if mapping[char] != top_element:
+                return False
+        else:
+            stack.append(char)
+
+    return not stack
+
+# Test cases
+print(isValid("()"))       # Output: True
+print(isValid("()[]{}"))   # Output: True
+print(isValid("(]"))        # Output: False
