@@ -1,6 +1,9 @@
 class Solution(object):
-    def isPalindrome(self,x):
-        return str(x) == str(x)[::-1]
-    
+    def isValid(self,x):
+        if x.count("\'") == 2:
+            return True
+        else:
+            return False
+
 object = Solution()
-print(object.isPalindrome(323))
+print(object.isValid("\'\'"))
