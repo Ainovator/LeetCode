@@ -6,7 +6,7 @@ class Solution(object):
             # Если число есть, добавляем в массив количество вариаций
             if partner_num in nums[i+1:]:
                 # Используем enumerate для получения индексов
-                partner_index = nums.index(partner_num, i + 1)
+                partner_index = nums.index(partner_num, i+1)
                 return i, partner_index
             else:
                 pass
@@ -14,6 +14,4 @@ class Solution(object):
 object = Solution()
 answer = object.twoSum([3, 3], 6)
 print(answer)
-
-
 
