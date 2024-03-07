@@ -1,0 +1,25 @@
+class Node(object):
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+    def display_info(self):
+        print(f"{self.val}")
+        print(f"{self.left}")
+        print(f"{self.right}")
+
+class Solution(object):
+    def isSameTree(self, p, q):
+        if not p and not q:
+            return True
+        if not p or not q:
+            return False
+        if p.val != q.val:
+            return False
+        return self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right)
+
+Tree_1 = Node(1, Node(2), Node(3))
+Tree_2 = Node(1, Node(2), Node(3))
+result = Solution()
+print(result.isSameTree(Tree_1, Tree_2))
